@@ -9,14 +9,16 @@
 </head>
 <body>
     <h1>Movie Sentiment Analysis</h1>
-    <div class="text-1">
-        <textarea name="user-input" id="user-input" cols="60" rows="10" placeholder="type here about your comments of movie"></textarea>
-    </div>
-    <div class="center">
-        <button><img src="{{url_for('static', filename='images/plane.png')}}" alt="Send " /></button>
-    </div>
+    <form action="" method="post">
+        <div class="text-1">
+            <textarea name="user-input" id="user-input" cols="60" rows="10" placeholder="type here about your comments of movie"></textarea>
+        </div>
+        <div class="center">
+            <button type="submit"><img src="{{url_for('static', filename='images/plane.png')}}" alt="Send " /></button>
+        </div>
+    </form>
     <div class="label">
-        <p></p>
+        <p>{{text}}</p>
     </div>
 </body>
 </html>

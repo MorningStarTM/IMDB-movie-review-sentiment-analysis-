@@ -1,10 +1,14 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    text = ""
+    if request.method == "POST":
+        text = request.form['user-input']
+
+    return render_template('index.html', text=text)
 
 
 

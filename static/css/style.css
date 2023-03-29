@@ -30,8 +30,8 @@ textarea {
 .center {
     margin: 0;
     position: absolute;
-    top: 37%;
-    left: 64%;
+    top: 49%;
+    left: 67%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     
@@ -46,4 +46,9 @@ button {
 button:hover {
     background-color: aliceblue;
     border-radius: 2px;
+}
+
+p{
+    font-size: 100px;
+    color: blue;
 }
