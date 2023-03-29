@@ -1,17 +1,17 @@
 from flask import Flask, render_template, url_for, request
-"""from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import one_hot
 import numpy as np
 import spacy
-import re"""
+import re
 
 app = Flask(__name__)
 
-"""#load language model for preprocessing
+#load language model for preprocessing
 nlp = spacy.load("en_core_web_sm")
 #load the model
-model = load_model("./assets/movieSentiAnalysisV-3.h5")
+model = load_model("./assets/movieSentiAnalysisV-4.h5")
 
 #stopwords
 stop_word_text = ['a', 'an', 'br', 'the', 'and', 'or', 'but', 'if', 'then', 'else', 'when', 'where', 'who', 
@@ -59,7 +59,7 @@ def preprocess_text_data(data):
     return corpus
 
 voc_size = 5000
-sent_length = 200"""
+sent_length = 200
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -69,7 +69,7 @@ def index():
     if request.method == "POST":
         text = request.form['user-input']
     #preprocessing 
-    """processed_text = preprocess_text_data(text)
+    processed_text = preprocess_text_data(text)
     #one hot encoding
     onehot_sent = [one_hot(word, voc_size) for word in processed_text]
     #embedding
@@ -79,10 +79,10 @@ def index():
     
     prediction = (model.predict(X_sample) > 0.9).astype("int32")
     if prediction[0][0] == 0:
-        result = "Negative U0001F614"
+        result = "Negative \U0001F614"
     elif prediction[0][0] == 1:
-        result = "Positive U0001F603" """
-    return render_template('index.html', text=text)
+        result = "Positive \U0001F603" 
+    return render_template('index.html', text=result)
 
 
 
